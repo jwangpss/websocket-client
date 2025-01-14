@@ -7,10 +7,10 @@ async def echo(websocket):
         await websocket.send(f"Echo: {message}")
 
 async def main():
-    start_server = websockets.serve(echo, "192.168.1.111", 8765)
+    start_server = websockets.serve(echo, "0.0.0.0", 8765)
     
     async with start_server:
-        print("WebSocket server started on ws://192.168.1.111:8765")
+        print("WebSocket server started on ws://0.0.0.0:8765")
         await asyncio.Future()
 
 if __name__ == "__main__":
